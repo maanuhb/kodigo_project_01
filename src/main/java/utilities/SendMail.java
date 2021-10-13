@@ -23,7 +23,7 @@ public class SendMail {
         try {
             email.setFrom(EMAIL);
             email.setSubject("PRUEBA");
-            email.addTo(emailToSend); 
+            email.addTo(emailToSend);
             email.setMsg("Envio de correo realizado exitosamente\n");
             email.send();
         } catch (EmailException ex) {
