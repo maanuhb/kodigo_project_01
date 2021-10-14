@@ -4,13 +4,14 @@ import helpers.Find;
 import helpers.Menu;
 import helpers.RequestInfo;
 import model.Flight;
-
 import java.util.List;
 import java.util.Scanner;
 
 public class MenuFlight {
     private static Scanner sc = new Scanner(System.in);
 
+    //This method it called in case 1 in Main class
+    //It will show a sub menu for the manage flights
     public static void viewFlightLoop(int option, List<Flight> flightList){
 
         switch(option){

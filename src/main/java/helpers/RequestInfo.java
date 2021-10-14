@@ -1,8 +1,5 @@
 package helpers;
 
-import datalist.FlightList;
-import menus.MenuFlight;
-import model.AirPort;
 import model.Flight;
 
 import java.text.DateFormat;
@@ -12,10 +9,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class RequestInfo {
-    final static String ANSI_BLUE = "\u001B[34m";
     final static Scanner sc= new Scanner(System.in);
-    //static List<Flight> flightList = FlightList.getFlightList();
 
+    //Method to request the info by console to get a new flight
     public static Flight requestFlight(List<Flight> flightList){
         Flight f = new Flight();
         f.setFlightNumber(flightList.size());
@@ -55,6 +51,7 @@ public class RequestInfo {
         return f;
     }
 
+    //Method to request the user by console what flight will be changed her status
     public static void requestChangeState(List<Flight> flightList){
         System.out.println("Verifique el cuadro de vuelos para actualizar el estado de algun vuelo");
         Menu.printObjectList(flightList);
@@ -65,6 +62,7 @@ public class RequestInfo {
         f.setStatus(sc.nextLine());
     }
 
+    //Method to request what Flight will be canceled
     public static void requestCancelFlight(List<Flight> flightList){
         System.out.println("Verifique el cuadro de vuelos para cancelar algun vuelo");
         Menu.printObjectList(flightList);

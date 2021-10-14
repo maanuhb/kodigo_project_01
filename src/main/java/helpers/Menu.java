@@ -8,18 +8,15 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Menu {
-    final String ANSI_RED = "\u001B[31m";
-    final String ANSI_GREEN = "\u001B[32m";
-    final String ANSI_YELLOW = "\u001B[33m";
+    //Constant to modify the printf
     final static String ANSI_BLUE = "\u001B[34m";
-
+    //Constants to format and tabulate the printed text
     final static String LINE = "**************************************************";
     final static String TAB = "%60s[%1s].%-80s\n";
     final static String TAB_HEADER = "%66s%-80s\n";
 
+    //This is the main menu, the first menu that will be screen printed
     public static void printMainMenu(){
-
-        //
         System.out.println(ANSI_BLUE );
         String spaces = " %100s\n";
         System.out.printf(spaces, LINE);
@@ -37,6 +34,7 @@ public class Menu {
         System.out.printf(spaces, LINE);
     }
 
+    //This is the menu for 1. Manage Flights
     public static void printFlightMenu(){
         System.out.println(ANSI_BLUE );
         String spaces = " %100s\n";
@@ -55,12 +53,11 @@ public class Menu {
         System.out.printf(spaces, LINE);
     }
 
-    static String mainTab = "|%77s%-92s|\n";
-
     static String headerTab = "|%-6s|%-15s|%-18s|%-32s|%-16s|%-32s|%-16s|%-10s|\n";
     static String separatorLine =
             "+------+---------------+------------------+--------------------------------+----------------+--------------------------------+----------------+----------+";
 
+    //Method that will print the flights, it can go to an interface
     public static void printObjectList(List<Flight> flightList){
         System.out.printf(separatorLine + "\n");
         System.out.printf( headerTab, " Code", "     Airline", "   Aircraft", " Country/City Origin", "    Hour/Date",

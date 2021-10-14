@@ -11,6 +11,7 @@ import java.util.List;
 
 public class FlightList {
 
+    //This method will generate a burnt list of flights
     public static List<Flight> getFlightList() {
         List<Flight> flightList = new ArrayList<>();
         Flight f1= new Flight();
