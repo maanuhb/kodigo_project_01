@@ -1,5 +1,9 @@
 package interfaces;
 
+import model.Flight;
+
+import java.util.Date;
+
 public interface IUpdateFlight {
-    void updateFlight();
+    void updateFlight(Flight flight, Date departureDateTime, Date arrivalDateTime);
 }

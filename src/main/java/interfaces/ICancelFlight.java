@@ -1,5 +1,7 @@
 package interfaces;
 
+import model.Flight;
+
 public interface ICancelFlight {
-    String cancelFlight();
+    String cancelFlight(Flight flight);
 }

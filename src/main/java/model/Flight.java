@@ -1,37 +1,50 @@
 package model;
 
+import datalist.FlightList;
 import interfaces.ICancelFlight;
 import interfaces.IEnterFlight;
 import interfaces.IUpdateFlight;
+import interfaces.IUpdateState;
 import lombok.Builder;
 import lombok.Data;
 
 import java.text.DateFormat;
+import java.util.Date;
+import java.util.List;
 
-@Builder
+
 @Data
-public class Flight implements IUpdateFlight, ICancelFlight, IEnterFlight {
+public class Flight implements IUpdateFlight, ICancelFlight, IEnterFlight, IUpdateState {
     private int flightNumber;
     private String airline;
     private String Status;
     private AirPort destination;
     private AirPort origin;
-    private DateFormat departureDateTime;
-    private DateFormat arrivalDateTime;
+    private Date departureDateTime;
+    private Date arrivalDateTime;
 
 
     @Override
-    public String cancelFlight() {
-        return null;
+    public void enterFlight(List<Flight> flightList, Flight flight) {
+        flightList.add(flight);
     }
 
     @Override
-    public void enterFlight(Flight flight) {
-
+    public void updateFlight(Flight flight, Date departureDateTime, Date arrivalDateTime) {
+        if(flight.getStatus().equals("delayed")){
+            flight.setDepartureDateTime(departureDateTime);
+            flight.setArrivalDateTime(arrivalDateTime);
+        }
     }
 
     @Override
-    public void updateFlight() {
+    public String cancelFlight(Flight flight) {
+        flight.setStatus("Canceled");
+        return "Vuelo cancelado";
+    }
 
+    @Override
+    public void updateState( String status) {
+        this.setStatus(status);
     }
 }
