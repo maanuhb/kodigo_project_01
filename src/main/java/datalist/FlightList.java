@@ -22,6 +22,7 @@ public class FlightList {
         DateFormat hourdateFormat = new SimpleDateFormat("HH:mm dd/MM/yyyy");
         try {
             f1.setArrivalDateTime(hourdateFormat.parse("01:10 15/10/2021"));
+            f1.setDepartureDateTime(hourdateFormat.parse("09:10 15/10/2021"));
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -36,6 +37,7 @@ public class FlightList {
         DateFormat hourdateFormat2 = new SimpleDateFormat("HH:mm dd/MM/yyyy");
         try {
             f2.setArrivalDateTime(hourdateFormat2.parse("11:10 15/10/2021"));
+            f2.setDepartureDateTime(hourdateFormat2.parse("04:30 15/10/2021"));
         } catch (ParseException e) {
             e.printStackTrace();
         }
