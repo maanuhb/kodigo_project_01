@@ -1,27 +1,37 @@
 package model;
 
-import lombok.Getter;
-import lombok.Setter;
+import interfaces.ICancelFlight;
+import interfaces.IEnterFlight;
+import interfaces.IUpdateFlight;
+import lombok.Builder;
+import lombok.Data;
 
-import java.util.Date;
+import java.text.DateFormat;
 
-public class Flight {
-    private @Getter @Setter Airport destination;
-    private @Getter @Setter Airport origin;
-    private @Getter @Setter Date departureDateTime;
-    private @Getter @Setter Date arrivalDateTime;
-    private @Getter @Setter String airline;
-    private @Getter @Setter Enum Status;
+@Builder
+@Data
+public class Flight implements IUpdateFlight, ICancelFlight, IEnterFlight {
+    private int flightNumber;
+    private String airline;
+    private String Status;
+    private AirPort destination;
+    private AirPort origin;
+    private DateFormat departureDateTime;
+    private DateFormat arrivalDateTime;
 
-    public Flight() {
+
+    @Override
+    public String cancelFlight() {
+        return null;
     }
 
-    public Flight(Airport destination, Airport origin, Date departureDateTime, Date arrivalDateTime, String airline, Enum status) {
-        this.destination = destination;
-        this.origin = origin;
-        this.departureDateTime = departureDateTime;
-        this.arrivalDateTime = arrivalDateTime;
-        this.airline = airline;
-        Status = status;
+    @Override
+    public void enterFlight(Flight flight) {
+
+    }
+
+    @Override
+    public void updateFlight() {
+
     }
 }
