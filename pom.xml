@@ -16,6 +16,7 @@
             <scope>provided</scope>
         </dependency>
 
+
         <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-email -->
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -31,9 +32,11 @@
 
     </dependencies>
 
+
     <properties>
         <maven.compiler.source>15</maven.compiler.source>
         <maven.compiler.target>15</maven.compiler.target>
     </properties>
+
 
 </project>
